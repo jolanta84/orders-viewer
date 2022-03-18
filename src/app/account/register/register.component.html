@@ -1,0 +1,54 @@
+<div class="form-container">
+  <mat-toolbar color="primary">Rejestracja</mat-toolbar>
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <mat-form-field appearance="outline">
+          <input
+            type="text"
+            matInput
+            placeholder="Imię i nazwisko"
+            formControlName="name"
+          />
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-error *ngIf="hasError('name', 'required')"
+            >Podaj imię i nazwisko</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input
+            type="email"
+            matInput
+            placeholder="Email"
+            formControlName="email"
+          />
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="hasError('email', 'required')"
+            >Podaj email</mat-error
+          >
+          <mat-error *ngIf="hasError('email', 'pattern')"
+            >Błędny email</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input
+            type="password"
+            matInput
+            placeholder="Hasło"
+            formControlName="password"
+          />
+          <mat-icon matSuffix>vpn_key</mat-icon>
+          <mat-error *ngIf="hasError('password', 'required')"
+            >Podaj hasło</mat-error
+          >
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">
+          Zarejestruj się
+        </button>
+        <button mat-stroked-button color="primary" routerLink="../login">
+          Powrót do logowania
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

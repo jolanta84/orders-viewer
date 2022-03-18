@@ -1,0 +1,152 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$orders-viewer-primary: (
+  50: #eaf6f5,
+  100: #cae9e6,
+  200: #a6dbd6,
+  300: #82ccc5,
+  400: #68c1b8,
+  500: #4db6ac,
+  600: #46afa5,
+  700: #3da69b,
+  800: #349e92,
+  900: #258e82,
+  A100: #cefff9,
+  A200: #9bfff3,
+  A400: #68ffec,
+  A700: #4effe9,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$orders-viewer-accent: (
+  50: #f2f4f5,
+  100: #dee4e7,
+  200: #c8d2d7,
+  300: #b1bfc6,
+  400: #a1b2ba,
+  500: #90a4ae,
+  600: #889ca7,
+  700: #7d929d,
+  800: #738994,
+  900: #617884,
+  A100: #f6fcff,
+  A200: #c3eaff,
+  A400: #90d8ff,
+  A700: #76cfff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$orders-viewer-warn: (
+  50: #fdeaea,
+  100: #facbcb,
+  200: #f7a9a8,
+  300: #f48785,
+  400: #f16d6a,
+  500: #ef5350,
+  600: #ed4c49,
+  700: #eb4240,
+  800: #e83937,
+  900: #e42927,
+  A100: #ffffff,
+  A200: #ffeded,
+  A400: #ffbbba,
+  A700: #ffa2a1,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$my-primary: mat.define-palette($orders-viewer-primary, 700, 300, 900);
+$my-accent: mat.define-palette($orders-viewer-accent, 500, 400, 700);
+$my-warn: mat.define-palette($orders-viewer-warn, 500, 400, 700);
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($my-theme);
+
+$orders-viewer-typography: mat.define-typography-config(
+  $font-family: "Rubik, sans-serif",
+  $display-4: mat.define-typography-level(112px, 112px, 300),
+  $display-3: mat.define-typography-level(56px, 56px, 400),
+  $display-2: mat.define-typography-level(45px, 48px, 400),
+  $display-1: mat.define-typography-level(34px, 40px, 400),
+  $headline: mat.define-typography-level(48px, 32px, 400),
+  $title: mat.define-typography-level(61px, normal, 500),
+  // $subheading-2:  mat.define-typography-level(48.77px, normal, 400),
+  $subheading-1: mat.define-typography-level(34.54px, normal, 400),
+  $body-2: mat.define-typography-level(14.22px, normal, 500),
+  $body-1: mat.define-typography-level(16.26px, normal, 400),
+  $caption: mat.define-typography-level(14px, normal, 400),
+  $button: mat.define-typography-level(14.22px, normal, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input: mat.define-typography-level(inherit, 1.125, 400),
+);
+
+@include mat.core($orders-viewer-typography);
+
+.mat-table {
+  background-color: mat.get-color-from-palette($my-primary, 300);
+  color: mat.get-color-from-palette($my-primary, 900);
+}
+
+.snack-style {
+  background-color: mat.get-color-from-palette($my-warn, 300);
+  color: mat.get-color-from-palette($my-warn, 900);
+  border: 2px solid mat.get-color-from-palette($my-warn, 900);
+  .mat-simple-snackbar-action {
+    color: mat.get-color-from-palette($my-warn, 900);
+  }
+}

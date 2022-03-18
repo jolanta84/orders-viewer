@@ -1,0 +1,29 @@
+<mat-toolbar
+  class="mat-elevation-z8"
+  color="primary"
+  fxLayout="row"
+  *ngIf="user"
+>
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout class="menu-items">
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>Wyloguj się
+      </button>
+    </ul>
+  </div>
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.gt-xs>
+    <a
+      class="valign-center"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="additional links"
+    >
+      <mat-icon>menu</mat-icon>
+    </a>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>Wyloguj się
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

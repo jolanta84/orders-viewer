@@ -1,0 +1,27 @@
+mat-toolbar {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &_hover,
+  &_active {
+    color: lightgray;
+  }
+}
+
+.menu-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.valign-center {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+}

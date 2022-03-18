@@ -1,0 +1,30 @@
+
+  :host {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+  }
+  .form-container {
+    margin-top: 10rem;
+    width: 40%;
+    min-width: 22rem;
+  }
+
+  .mat-toolbar {
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 20rem;;
+  }
+  .mat-raised-button, .mat-stroked-button {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    width: 80%;
+    height: 40px;
+  }
+
+

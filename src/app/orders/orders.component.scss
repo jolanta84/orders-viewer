@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+}
+
+.mat-table {
+  display: table;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.container-order {
+  margin: 2rem;
+}
+
+.order-checkbox {
+  margin: 0.5rem;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #e4f0ec;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+
