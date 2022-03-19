@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class OrdersService {
-  private url: string = 'http://localhost:3000/orders';
+  private url: string = 'https://jolanta84.github.io/orders-json-api/orders.json';
 
   constructor(private http: HttpClient) {}
 
